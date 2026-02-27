@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const email = "2223483@slu.edu.ph";
+const github = "https://github.com/duanechan";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <section className="flex flex-col gap-8 m-8">
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <h1 className="mb-4 text-6xl font-bold text-gray-800">
+          Under Construction
+        </h1>
+        <span className="text-xl font-inter">I'm working on it. 🛏️💤</span>
+      </div>
+      <div className="flex gap-3">
+        <a
+          href={github}
+          className="transition-all duration-200 ease-in-out text-gray-800 hover:text-gray-900 hover:-translate-y-0.5"
+        >
+          <FontAwesomeIcon size="xl" icon={faGithub} />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a
+          href={`mailto:${email}?subject=Inquiry from Portfolio`}
+          className="transition-all duration-200 ease-in-out text-gray-800 hover:text-gray-900 hover:-translate-y-0.5"
+        >
+          <FontAwesomeIcon size="xl" icon={faEnvelope} />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </section>
+  );
 }
 
-export default App
+export default App;
